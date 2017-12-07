@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SeekBar;
 
 import com.larswerkman.lobsterpicker.OnColorListener;
@@ -19,6 +20,7 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 public class MainActivity extends AppCompatActivity {
 
     private CircularProgressBar circularProgressBar;
+    int test = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,4 +139,17 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void play(View view) throws InterruptedException {
+
+//        circularProgressBar.setProgressWithAnimation(test);
+        circularProgressBar.setProgressWithAnimation(test, 1000);
+        test = test + 5;
+        if(test == 105) {
+            test = 5;
+        }
+
+
+    }
+
 }
